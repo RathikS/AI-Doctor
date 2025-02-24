@@ -21,6 +21,10 @@ system_prompt="""You have to act as a professional doctor, i know you are not bu
             Keep your answer concise (max 2 sentences). No preamble, start your answer right away please"""
 
 
+
+def audio_vision():
+    pass
+
 def process_inputs(audio_filepath, image_filepath):
     speech_to_text_output = transcribe_with_groq(GROQ_API_KEY=os.environ.get("GROQ_API_KEY"), 
                                                  audio_filepath=audio_filepath,
