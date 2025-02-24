@@ -25,7 +25,7 @@ def process_inputs(audio_filepath, image_filepath):
     speech_to_text_output = transcribe_with_groq(GROQ_API_KEY=os.environ.get("GROQ_API_KEY"), 
                                                  audio_filepath=audio_filepath,
                                                  stt_model="whisper-large-v3")
-
+    
     # Handle the image input
     if image_filepath:
         doctor_response = analyze_image_with_query(query=system_prompt+speech_to_text_output, encoded_image=encode_image(image_filepath), model="llama-3.2-11b-vision-preview")
